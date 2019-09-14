@@ -13,7 +13,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export default input => {
-  console.log("upload to firebase");
+  console.log("test mobile");
   firebase
     .database()
     .ref("user/")

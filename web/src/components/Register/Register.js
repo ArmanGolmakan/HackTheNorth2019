@@ -24,7 +24,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     // send inputText to firebase (James)
-    upload("hello");
+    upload("hello arman");
   };
 
   render() {

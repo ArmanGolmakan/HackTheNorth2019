@@ -7,9 +7,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^6.6.1",
+    "jetifier": "^1.6.4",
     "react": "16.8.3",
     "react-native": "0.59.8",
-    "react-native-nfc-manager": "^1.2.2"
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-nfc-manager": "^1.2.2",
+    "react-navigation": "^3.3.2",
+    "react-navigation-stack": "^1.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
