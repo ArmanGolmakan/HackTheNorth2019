@@ -38,6 +38,7 @@ class Register extends React.Component {
     } = this.state;
     return (
       <div>
+<<<<<<< HEAD
         {/* <TextField
           onChange={e => {
             this.textInputChange(e, "name");
@@ -95,14 +96,42 @@ class Register extends React.Component {
               </div>
             </div>
             <div className="picDiv">
+=======
+        <div className="1">
+          <div className="2">
+            <div className="newPatient">New Patient</div>
+            <div className="loadPatient">Load Patient</div>
+            <div className="settings">Settings</div>
+          </div>
+          <div className="3">
+            <div className="4">Registration</div>
+            <div className="5">
+              <input type="text" name="name" placeholder="Name" />
+              <input type="text" name="emergcontact" placeholder="Emergency Contact" onChange={e => { this.textInputChange(e, "emergencyContact") }} />
+              <input type="text" name="curmeds" placeholder="Current Medications" onChange={e => { this.textInputChange(e, "currentMedications") }} />
+              <input type="text" name="alrg" placeholder="Allergies" onChange={e => { this.textInputChange(e, "allergies") }} />
+              <input type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} />
+              <input type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} />
+            </div>
+            <div className="6">
+>>>>>>> e41b73db9f2fb7455cd61d16a236e306862ded97
             </div>
           </div>
         </div>
+
+        <Button
+          label="Submit"
+          primary={true}
+          onClick={this.onSubmitButtonClick}>Submit</Button>
+
       </div>
     );
   }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e41b73db9f2fb7455cd61d16a236e306862ded97
 export default Register;
