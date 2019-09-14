@@ -40,7 +40,6 @@ class Register extends React.Component {
       bloodType
     } = this.state;
     return (
-<<<<<<< HEAD
       <div className="Register">
         <div className="LeftPanel">
           <div>NEW PATIENT</div>
@@ -66,26 +65,6 @@ class Register extends React.Component {
               })}
             </div>
           </div>
-=======
-      <div>
-        <div className="container">
-          <div className="regFormDiv">
-            <div className="formDiv">
-              
-              <div className="nameField"><TextField type="text" name="name" placeholder="Name" /> </div> 
-              <div className="contactField"><TextField type="text" name="emergcontact" placeholder="Emergency Contact" onChange={e => { this.textInputChange(e, "emergencyContact") }} /></div>
-              <div className="medsField"><TextField type="text" name="curmeds" placeholder="Current Medications" onChange={e => { this.textInputChange(e, "currentMedications") }} /></div>
-              <div className="allergyField"><TextField type="text" name="alrg" placeholder="Allergies" onChange={e => { this.textInputChange(e, "allergies") }} /></div>
-              <div className="bloodField"><TextField type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} /></div>
-              <div className="ageField"><TextField type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} /></div>
-            
-              
-             
-            </div>
-
-          </div> 
-
->>>>>>> 4bda81ce2454951ae26c292eee1c5b17bac13889
         </div>
         <button className="submit">Submit</button>
       </div>
