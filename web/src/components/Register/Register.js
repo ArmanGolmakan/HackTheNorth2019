@@ -2,56 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import upload from "../../functions/upload";
-import { red } from "@material-ui/core/colors";
-import './Register.css';
-import Checkbox from '@material-ui/core/Checkbox';
-import  RadioButtonGroup from '@material-ui/core/Radio';
-import SelectField from '@material-ui/core/Select';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-
-
-const renderTextField = (
-  { input, label, meta: { touched, error }, ...custom },
-) => (
-  <TextField
-    hintText={label}
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    {...custom}
-  />
-);
-
-const renderCheckbox = ({ input, label }) => (
-  <Checkbox
-    label={label}
-    checked={input.value ? true : false}
-    onCheck={input.onChange}
-  />
-);
-
-const renderRadioGroup = ({ input, ...rest }) => (
-  <RadioButtonGroup
-    {...input}
-    {...rest}
-    valueSelected={input.value}
-    onChange={(event, value) => input.onChange(value)}
-  />
-);
-
-const renderSelectField = (
-  { input, label, meta: { touched, error }, children, ...custom },
-) => (
-  <SelectField
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    onChange={(event, index, value) => input.onChange(value)}
-    children={children}
-    {...custom}
-  />
-);
+import "./Register.css";
 
 class Register extends React.Component {
   constructor(props) {
@@ -74,7 +25,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     // send inputText to firebase (James)
-    upload("onion");
+    upload("hello");
   };
 
   render() {
@@ -87,28 +38,42 @@ class Register extends React.Component {
       bloodType
     } = this.state;
     return (
-      <div>
-        <div className="container">
-          <div className="regFormDiv">
-            <div className="formDiv">
-              
-              <div className="nameField"><TextField type="text" name="name" placeholder="Name" /> </div> 
-              <div className="contactField"><TextField type="text" name="emergcontact" placeholder="Emergency Contact" onChange={e => { this.textInputChange(e, "emergencyContact") }} /></div>
-              <div className="medsField"><TextField type="text" name="curmeds" placeholder="Current Medications" onChange={e => { this.textInputChange(e, "currentMedications") }} /></div>
-              <div className="allergyField"><TextField type="text" name="alrg" placeholder="Allergies" onChange={e => { this.textInputChange(e, "allergies") }} /></div>
-              <div className="bloodField"><TextField type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} /></div>
-              <div className="ageField"><TextField type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} /></div>
-              <Fab color="primary" aria-label="add">
-                <AddIcon />
-              </Fab>
+      <div className="Register">
+        <div className="LeftPanel">
+          <div>NEW PATIENT</div>
+          <div>LOAD PATIENT</div>
+          <div>SETTING</div>
+        </div>
+
+        <div className="FormBackground">
+          <div className="FormContainer">
+            <div className="Title">Registration</div>
+            <div className="TextForms">
+              {Object.keys(this.state).map(key => {
+                return (
+                  <div className="TextField">
+                    <TextField
+                      OnChange={e => {
+                        this.textInputChange(e, key);
+                      }}
+                      placeholder={this.state[key]}
+                    />
+                  </div>
+                );
+              })}
             </div>
-            <div className="picDiv">
-            </div> 
-          </div> 
+          </div>
         </div>
       </div>
     );
   }
 }
+
+const styles = {
+  button: {
+    margin: 15,
+    background: "red"
+  }
+};
 
 export default Register;
