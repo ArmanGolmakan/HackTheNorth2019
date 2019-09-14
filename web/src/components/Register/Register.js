@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import upload from "../../functions/upload";
 import { red } from "@material-ui/core/colors";
 import './Register.css';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -71,6 +72,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     // send inputText to firebase (James)
+    upload("hema to be 1st place");
   };
 
   render() {
@@ -84,7 +86,6 @@ class Register extends React.Component {
     } = this.state;
     return (
       <div>
-
         <div className="container">
           <div className="regFormDiv">
             <div className="formDiv">
