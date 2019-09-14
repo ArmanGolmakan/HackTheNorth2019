@@ -1,0 +1,31 @@
+.nameField {
+	margin-bottom: 10px;
+	float: left;
+	margin-left: 10%;
+}
+
+.contactField {
+	margin-bottom: 20px;
+	float: left;
+	margin-left: 15%;
+}
+
+.medsField {
+	margin-bottom: 20px;
+}
+
+.allergyField {
+	margin-bottom: 20px;
+	float: left;
+	margin-left: 10%;
+}
+
+.bloodField {
+	margin-bottom: 20px;
+	float: left;
+	margin-left: 15%;
+}
+
+.ageField {
+	margin-bottom: 20px;
+}
