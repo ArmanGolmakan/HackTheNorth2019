@@ -53,6 +53,8 @@ const renderSelectField = (
   />
 );
 
+const handlePress = () => false
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -98,12 +100,15 @@ class Register extends React.Component {
               <div className="allergyField"><TextField type="text" name="alrg" placeholder="Allergies" onChange={e => { this.textInputChange(e, "allergies") }} /></div>
               <div className="bloodField"><TextField type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} /></div>
               <div className="ageField"><TextField type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} /></div>
-              <Fab color="primary" aria-label="add">
-                <AddIcon />
-              </Fab>
+            
+              
+             
             </div>
+
           </div> 
+
         </div>
+        <button className="submit">Submit</button>
       </div>
     );
   }

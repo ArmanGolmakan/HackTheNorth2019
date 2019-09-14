@@ -1,13 +1,13 @@
 .nameField {
 	margin-bottom: 10px;
 	float: left;
-	margin-left: 10%;
+	margin-left: 12%;
 }
 
 .contactField {
 	margin-bottom: 20px;
 	float: left;
-	margin-left: 15%;
+	margin-left: 16%;
 }
 
 .medsField {
@@ -17,15 +17,24 @@
 .allergyField {
 	margin-bottom: 20px;
 	float: left;
-	margin-left: 10%;
+	margin-left: 12%;
 }
 
 .bloodField {
 	margin-bottom: 20px;
 	float: left;
-	margin-left: 15%;
+	margin-left: 16%;
 }
 
 .ageField {
 	margin-bottom: 20px;
+}
+
+.submit {
+	background-color: #3037f2;
+	padding: 10px;
+	color: white;
+	width: 150px;
+	font-size: 15pt;
+	border-radius: 5px;
 }
