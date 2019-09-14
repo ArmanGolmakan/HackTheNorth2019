@@ -72,11 +72,4 @@ class Register extends React.Component {
   }
 }
 
-const styles = {
-  button: {
-    margin: 15,
-    background: "red"
-  }
-};
-
 export default Register;
