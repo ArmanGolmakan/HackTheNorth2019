@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  Button,
-  Platform,
-  TouchableOpacity,
-  Linking,
-  TextInput,
-  ScrollView
-} from "react-native";
+import { View, Text, Platform, ScrollView, Alert } from "react-native";
 import NfcManager, { Ndef } from "react-native-nfc-manager";
 
 function buildTextPayload(valueToWrite) {
@@ -22,9 +13,8 @@ class WriteNFC extends Component {
       supported: true,
       enabled: false,
       isWriting: false,
-      urlToWrite: "https://www.google.com",
       rtdType: 1,
-      parsedText: null,
+      parsedText: this.props.navigation.getParam("value", ""),
       tag: {}
     };
   }
@@ -34,6 +24,8 @@ class WriteNFC extends Component {
       this.setState({ supported });
       if (supported) {
         this._startNfc();
+        this._startDetection();
+        this._requestNdefWrite();
       }
     });
   }
@@ -42,17 +34,12 @@ class WriteNFC extends Component {
     if (this._stateChangedSubscription) {
       this._stateChangedSubscription.remove();
     }
+    this._stopDetection();
+    this._cancelNdefWrite();
   }
 
   render() {
-    let {
-      supported,
-      enabled,
-      tag,
-      isWriting,
-      urlToWrite,
-      parsedText
-    } = this.state;
+    let { supported, enabled, tag, parsedText } = this.state;
     return (
       <ScrollView style={{ flex: 1 }}>
         <View
@@ -60,43 +47,6 @@ class WriteNFC extends Component {
         >
           <Text>{`Is NFC supported ? ${supported}`}</Text>
           <Text>{`Is NFC enabled (Android only)? ${enabled}`}</Text>
-
-          <TouchableOpacity
-            style={{ marginTop: 20 }}
-            onPress={this._startDetection}
-          >
-            <Text style={{ color: "blue" }}>Start Tag Detection</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={{ marginTop: 20 }}
-            onPress={this._stopDetection}
-          >
-            <Text style={{ color: "red" }}>Stop Tag Detection</Text>
-          </TouchableOpacity>
-          {
-            <View
-              style={{ padding: 10, marginTop: 20, backgroundColor: "#e0e0e0" }}
-            >
-              <Text>(android) Write NDEF Test</Text>
-
-              <TouchableOpacity
-                style={{
-                  marginTop: 20,
-                  borderWidth: 1,
-                  borderColor: "blue",
-                  padding: 10
-                }}
-                onPress={
-                  isWriting ? this._cancelNdefWrite : this._requestNdefWrite
-                }
-              >
-                <Text style={{ color: "blue" }}>{`(android) ${
-                  isWriting ? "Cancel" : "Write NDEF"
-                }`}</Text>
-              </TouchableOpacity>
-            </View>
-          }
 
           <Text style={{ marginTop: 20 }}>{`Current tag JSON: ${JSON.stringify(
             tag
@@ -125,15 +75,18 @@ class WriteNFC extends Component {
   };
 
   _requestNdefWrite = () => {
-    let { isWriting, urlToWrite } = this.state;
+    let { isWriting, parsedText } = this.state;
     if (isWriting) {
       return;
     }
-    let bytes = buildTextPayload(urlToWrite);
+    let bytes = buildTextPayload(parsedText);
 
     this.setState({ isWriting: true });
     NfcManager.requestNdefWrite(bytes)
-      .then(() => console.log("write completed"))
+      .then(() => {
+        Alert.alert("Success");
+        this.props.navigation.navigate("HomeScreen");
+      })
       .catch(err => console.warn(err))
       .then(() => this.setState({ isWriting: false }));
   };
@@ -142,20 +95,6 @@ class WriteNFC extends Component {
     this.setState({ isWriting: false });
     NfcManager.cancelNdefWrite()
       .then(() => console.log("write cancelled"))
-      .catch(err => console.warn(err));
-  };
-
-  _requestAndroidBeam = () => {
-    let { isWriting, urlToWrite, rtdType } = this.state;
-    if (isWriting) {
-      return;
-    }
-
-    let bytes = buildTextPayload(urlToWrite);
-
-    this.setState({ isWriting: true });
-    NfcManager.setNdefPushMessage(bytes)
-      .then(() => console.log("beam request completed"))
       .catch(err => console.warn(err));
   };
 

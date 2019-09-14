@@ -17,7 +17,7 @@ class HomeScreen extends React.Component {
     const userRef = firebaseApp.database().ref("user/");
     userRef.on("value", snapshot => {
       const value = JSON.stringify(snapshot.val());
-      this.props.navigation.navigate("WriteNFC", value);
+      this.props.navigation.navigate("WriteNFC", { value });
     });
   }
   render() {
