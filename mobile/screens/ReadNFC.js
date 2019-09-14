@@ -98,7 +98,8 @@ class ReadNFC extends Component {
     this.setState({ tag });
     let text = this._parseText(tag);
     this.setState({ parsedText: text });
-    this.uploadToFirebase(text);
+    // hacky way to remove metadata
+    this.uploadToFirebase(text.slice(3, text.length));
     // upload to firebase
   };
 

@@ -11,14 +11,22 @@ const firebaseConfig = {
   messagingSenderId: "783964043403",
   appId: "1:783964043403:web:9f87c784d00cf3277b3c8e"
 };
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebaseApp = firebase.initializeApp(firebaseConfig);
+}
 const userRef = firebaseApp.database().ref("user/");
+let isInitial = true;
 
 class HomeScreen extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
+    // hacky way to prevent initial loading from firebase
     userRef.on("value", snapshot => {
-      const value = JSON.stringify(snapshot.val());
-      this.props.navigation.navigate("WriteNFC", { value });
+      if (isInitial) {
+        isInitial = false;
+      } else {
+        const value = JSON.stringify(snapshot.val());
+        this.props.navigation.navigate("WriteNFC", { value });
+      }
     });
   }
   render() {
