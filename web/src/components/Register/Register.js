@@ -97,8 +97,6 @@ class Register extends React.Component {
               <div className="bloodField"><TextField type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} /></div>
               <div className="ageField"><TextField type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} /></div>
             </div>
-            <div className="picDiv">
-            </div> 
           </div> 
         </div>
       </div>
