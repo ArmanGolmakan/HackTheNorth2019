@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Register from "./components/Register/Register";
+import PermanentDrawerLeft from "./components/Sidebar";
 
 function App() {
   return (
     <div className="App">
-      <Register />
+      <PermanentDrawerLeft />
     </div>
   );
 }
