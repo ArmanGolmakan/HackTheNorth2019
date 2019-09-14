@@ -1,6 +1,8 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { red } from "@material-ui/core/colors";
+import './Register.css';
 
 class Register extends React.Component {
   constructor(props) {
@@ -36,7 +38,7 @@ class Register extends React.Component {
     } = this.state;
     return (
       <div>
-        <TextField
+        {/* <TextField
           onChange={e => {
             this.textInputChange(e, "name");
           }}
@@ -71,7 +73,19 @@ class Register extends React.Component {
           primary={true}
           style={styles.button}
           onClick={this.onSubmitButtonClick}
-        />
+        /> */}
+        <div className="1">
+          <div className="2">
+          </div>
+          <div className="3">
+            <div className="4">
+            </div>
+            <div className="5">
+            </div>
+            <div className="6">
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
