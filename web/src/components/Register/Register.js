@@ -2,6 +2,8 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import upload from "../../functions/upload";
+import { red } from "@material-ui/core/colors";
+import "./Register.css";
 
 class Register extends React.Component {
   constructor(props) {
@@ -38,52 +40,64 @@ class Register extends React.Component {
     } = this.state;
     return (
       <div>
-        <TextField
-          onChange={e => {
-            this.textInputChange(e, "name");
-          }}
-          defaultValue={name}
-        />
-        <TextField
-          onChange={e => {
-            this.textInputChange(e, "age");
-          }}
-          defaultValue={age}
-        />
-        <TextField
-          onChange={e => {
-            this.textInputChange(e, "emergencyContact");
-          }}
-          defaultValue={emergencyContact}
-        />
-        <TextField
-          onChange={e => {
-            this.textInputChange(e, "allergies");
-          }}
-          defaultValue={allergies}
-        />
-        <TextField
-          onChange={e => {
-            this.textInputChange(e, "bloodType");
-          }}
-          defaultValue={bloodType}
-        />
-        <Button
-          label="Submit"
-          primary={true}
-          style={styles.button}
-          onClick={this.onSubmitButtonClick}
-        />
+        <div className="container">
+          <div className="leftTabDiv">
+            <div className="newPatient">New Patient</div>
+            <div className="loadPatient">Load Patient</div>
+            <div className="settings">Settings</div>
+          </div>
+          <div className="regFormDiv">
+            <div className="4">Registration</div>
+            <div className="formDiv">
+              <div className="reg">Registration</div>
+              <input type="text" name="name" placeholder="Name" />
+              <input
+                type="text"
+                name="emergcontact"
+                placeholder="Emergency Contact"
+                onChange={e => {
+                  this.textInputChange(e, "emergencyContact");
+                }}
+              />
+              <input
+                type="text"
+                name="curmeds"
+                placeholder="Current Medications"
+                onChange={e => {
+                  this.textInputChange(e, "currentMedications");
+                }}
+              />
+              <input
+                type="text"
+                name="alrg"
+                placeholder="Allergies"
+                onChange={e => {
+                  this.textInputChange(e, "allergies");
+                }}
+              />
+              <input
+                type="text"
+                name="bt"
+                placeholder="Blood Type"
+                onChange={e => {
+                  this.textInputChange(e, "bloodType");
+                }}
+              />
+              <input
+                type="text"
+                name="age"
+                placeholder="Age"
+                onChange={e => {
+                  this.textInputChange(e, "age");
+                }}
+              />
+            </div>
+            <div className="picDiv"></div> /*picDiv*/
+          </div>
+        </div>
       </div>
     );
   }
 }
-
-const styles = {
-  button: {
-    margin: 15,
-    background: "red"
-  }
-};
 
 export default Register;
