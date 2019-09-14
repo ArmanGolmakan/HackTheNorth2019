@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import upload from "../../functions/upload";
 
 class Register extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     // send inputText to firebase (James)
+    upload("hello");
   };
 
   render() {
