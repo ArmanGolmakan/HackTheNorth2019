@@ -1,12 +1,18 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: "Name",
+      age: "Age",
+      emergencyContact: "Emergency Contact",
+      currentMedications: "Current Medications",
+      allergies: "Allergies",
+      bloodType: "Blood Type"
+    };
   }
 
   textInputChange = (event, type) => {
@@ -16,17 +22,49 @@ class Register extends React.Component {
   };
 
   onSubmitButtonClick = () => {
-    // send inputText to firebase
+    // send inputText to firebase (James)
   };
+
   render() {
+    const {
+      name,
+      age,
+      emergencyContact,
+      currentMedications,
+      allergies,
+      bloodType
+    } = this.state;
     return (
-      <React.Fragment>
-        <AppBar title="Enter Personal Details" />
+      <div>
         <TextField
           onChange={e => {
-            this.textInputChange(e, "occupation");
+            this.textInputChange(e, "name");
           }}
-          defaultValue={"job"}
+          defaultValue={name}
+        />
+        <TextField
+          onChange={e => {
+            this.textInputChange(e, "age");
+          }}
+          defaultValue={age}
+        />
+        <TextField
+          onChange={e => {
+            this.textInputChange(e, "emergencyContact");
+          }}
+          defaultValue={emergencyContact}
+        />
+        <TextField
+          onChange={e => {
+            this.textInputChange(e, "allergies");
+          }}
+          defaultValue={allergies}
+        />
+        <TextField
+          onChange={e => {
+            this.textInputChange(e, "bloodType");
+          }}
+          defaultValue={bloodType}
         />
         <Button
           label="Submit"
@@ -34,7 +72,7 @@ class Register extends React.Component {
           style={styles.button}
           onClick={this.onSubmitButtonClick}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }
