@@ -7,11 +7,13 @@ import * as firebase from "firebase";
 
 import HomeScreen from "./screens/HomeScreen";
 import WriteNFC from "./screens/WriteNFC";
+import ReadNFC from "./screens/ReadNFC";
 
 const MainNavigator = createStackNavigator(
   {
     HomeScreen,
-    WriteNFC
+    WriteNFC,
+    ReadNFC
   },
   { initialRouteName: "HomeScreen" }
 );

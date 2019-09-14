@@ -1,9 +1,20 @@
 import React from "react";
-import { Text } from "react-native";
+import { View, Text, Button } from "react-native";
 
 class HomeScreen extends React.Component {
   render() {
-    return <Text>Home Screen</Text>;
+    const { navigate } = this.props.navigation;
+    return (
+      <View>
+        <Text>Home Screen</Text>
+        <Button
+          onPress={() => {
+            navigate("ReadNFC");
+          }}
+          title="Scan NFC"
+        />
+      </View>
+    );
   }
 }
 

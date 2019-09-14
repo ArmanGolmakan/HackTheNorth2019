@@ -26,7 +26,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     // send inputText to firebase (James)
-    upload("hello arman");
+    upload("hema to be 1st place");
   };
 
   render() {
@@ -91,6 +91,7 @@ class Register extends React.Component {
                   this.textInputChange(e, "age");
                 }}
               />
+              <Button onClick={this.onSubmitButtonClick} />
             </div>
             <div className="picDiv"></div> /*picDiv*/
           </div>
