@@ -76,11 +76,19 @@ class Register extends React.Component {
         /> */}
         <div className="1">
           <div className="2">
+            <div className="newPatient">New Patient</div>
+            <div className="loadPatient">Load Patient</div>
+            <div className="settings">Settings</div>
           </div>
           <div className="3">
-            <div className="4">
-            </div>
+            <div className="4">Registration</div>
             <div className="5">
+              <input type="text" name="name" placeholder="Name" />
+              <input type="text" name="emergcontact" placeholder="Emergency Contact" />
+              <input type="text" name="curmeds" placeholder="Current Medications" />
+              <input type="text" name="alrg" placeholder="Allergies" />
+              <input type="text" name="bt" placeholder="Blood Type" />
+              <input type="text" name="age" placeholder="Age" />
             </div>
             <div className="6">
             </div>
@@ -90,12 +98,5 @@ class Register extends React.Component {
     );
   }
 }
-
-const styles = {
-  button: {
-    margin: 15,
-    background: "red"
-  }
-};
 
 export default Register;
