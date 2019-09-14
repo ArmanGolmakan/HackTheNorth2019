@@ -7,6 +7,8 @@ import './Register.css';
 import Checkbox from '@material-ui/core/Checkbox';
 import  RadioButtonGroup from '@material-ui/core/Radio';
 import SelectField from '@material-ui/core/Select';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 
 const renderTextField = (
@@ -96,6 +98,9 @@ class Register extends React.Component {
               <div className="allergyField"><TextField type="text" name="alrg" placeholder="Allergies" onChange={e => { this.textInputChange(e, "allergies") }} /></div>
               <div className="bloodField"><TextField type="text" name="bt" placeholder="Blood Type" onChange={e => { this.textInputChange(e, "bloodType") }} /></div>
               <div className="ageField"><TextField type="text" name="age" placeholder="Age" onChange={e => { this.textInputChange(e, "age") }} /></div>
+              <Fab color="primary" aria-label="add">
+                <AddIcon />
+              </Fab>
             </div>
           </div> 
         </div>
