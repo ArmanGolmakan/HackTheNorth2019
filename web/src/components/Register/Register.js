@@ -74,15 +74,27 @@ class Register extends React.Component {
           style={styles.button}
           onClick={this.onSubmitButtonClick}
         /> */}
-        <div className="1">
-          <div className="2">
+        <div className="container">
+          <div className="leftTabDiv">
+            <p>New Patient</p>
+            <p>Load Patient</p>
+            <p>Settings</p>
           </div>
-          <div className="3">
-            <div className="4">
+          <div className="mainDiv">
+            <div className="regFormDiv">
+              <div className="regDiv">
+                Registration
+              </div>
+              <div className="formDiv">
+                <p className="name">Name</p>
+                <p className="age">Age</p>
+                <p>Emergency Contact</p>
+                <p>Current Medications</p>
+                <p>Allergies</p>
+                <p>Blood Type</p>
+              </div>
             </div>
-            <div className="5">
-            </div>
-            <div className="6">
+            <div className="picDiv">
             </div>
           </div>
         </div>
@@ -91,11 +103,6 @@ class Register extends React.Component {
   }
 }
 
-const styles = {
-  button: {
-    margin: 15,
-    background: "red"
-  }
-};
+
 
 export default Register;
