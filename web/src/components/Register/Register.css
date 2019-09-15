@@ -1,11 +1,16 @@
-.Register {
-  height: 100vh;
-  width: 100vw;
-  background: #069bab;
-  display: flex;
+.RegisterBox {
+  width: 50vw;
+  height: 50vh;
+  background: white;
+  border-radius: 25px;
+  padding: 20px 20px 20px 20px;
 }
 
-.Register .FormBackground {
+.RegisterContainer {
+  
+}
+
+/* .Register .FormBackground {
   margin-top: 0;
   width: 80%;
   height: 100%;
@@ -33,4 +38,4 @@
   width: 10vw;
   margin-left: 10vw;
   right: 0;
-}
+} */
