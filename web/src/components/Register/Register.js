@@ -4,7 +4,9 @@ import Button from "@material-ui/core/Button";
 import upload from "../../functions/upload";
 import "./Register.css";
 
-const handlePress = () => false;
+const textFieldStyles = {
+  width: "500px"
+};
 
 class Register extends React.Component {
   constructor(props) {
@@ -45,6 +47,7 @@ class Register extends React.Component {
                         OnChange={e => {
                           this.textInputChange(e, key);
                         }}
+                        className={textFieldStyles}
                         placeholder={this.state[key]}
                       />
                     </div>
@@ -53,7 +56,7 @@ class Register extends React.Component {
               </div>
             </div>
           </div>
-          <button className="submit">Submit</button>
+          {/* <button className="submit">Submit</button> */}
         </div>
       </div>
     );
