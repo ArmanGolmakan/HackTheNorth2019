@@ -13,16 +13,16 @@ class LeftPanel extends React.Component {
               this.props.onClick("Registration");
             }}
           >
-            REGISTRATION
+            <span>REGISTRATION</span>
           </div>
           <div
             onClick={() => {
               this.props.onClick("Load");
             }}
           >
-            LOAD PATIENT
+            <span>LOAD PATIENT</span>
           </div>
-          <div>SETTING</div>
+          <div><span>SETTING</span></div>
           {/* <div>
             <Link to="./../Register/Register">NEW PATIENT</Link>
             </div>
