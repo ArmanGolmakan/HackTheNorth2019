@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/Avenir-Roman.otf");
+}
+
 .App {
   height: 100%;
   width: 100%;
+  font-family: Avenir;
 }
 
 .App-logo {
