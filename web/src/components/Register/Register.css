@@ -4,7 +4,9 @@
   background: white;
   border-radius: 25px;
   padding: 20px 20px 20px 20px;
-  box-shadow: 10px 10px 5px grey;
+  -webkit-box-shadow: 0 10px 6px -6px black;
+       -moz-box-shadow: 0 10px 6px -6px black;
+            box-shadow: 0 12px 6px -6px black;
 }
 
 .RegisterBox {
