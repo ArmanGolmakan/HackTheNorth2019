@@ -3,8 +3,6 @@ import TextField from "@material-ui/core/TextField";
 import upload from "../../../functions/upload";
 import "./Register.css";
 
-const handlePress = () => false;
-
 class Register extends React.Component {
   constructor(props) {
     super(props);

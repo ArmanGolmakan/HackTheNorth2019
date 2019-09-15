@@ -3,8 +3,6 @@ import Register from "./Register/Register";
 import LeftPanel from "./LeftPanel/LeftPanel";
 import "./MainPanel.css";
 
-
-
 class MainPanel extends React.Component {
     constructor(props) {
         super(props);
