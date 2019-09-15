@@ -1,0 +1,14 @@
+.Description {
+  margin-right: 70px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.Description .desc {
+  color: #069bab;
+  font-size: 20px;
+}
+
+.Description .value {
+  font-size: 35px;
+}

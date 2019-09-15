@@ -48,6 +48,7 @@ class Register extends React.Component {
           </div>
           {/* <button className="submit">Submit</button> */}
         </div>
+        <img src={require("../../../assets/submit.png")} />
       </div>
     );
   }

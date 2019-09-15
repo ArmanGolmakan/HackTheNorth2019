@@ -7,7 +7,7 @@
   align-items: center;
   margin-right: 3vw;
   /* padding: 20px 20px 20px 20px; */
-  /* box-shadow: 10px 10px 5px grey; */
+  box-shadow: 0 0 10px darkslategrey;
 }
 
 .FormContainer {
@@ -40,6 +40,12 @@
   box-shadow: 5px 5px 2px grey;
 }
 
+.RegisterContainer img {
+  height: 50px;
+  position: fixed;
+  right: 5vw;
+  bottom: 19vh;
+}
 /* .Register .FormBackground {
   margin-top: 0;
   width: 80%;
