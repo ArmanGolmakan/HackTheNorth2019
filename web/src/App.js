@@ -1,13 +1,11 @@
 import React from "react";
 import "./App.css";
-import PermanentDrawerLeft from "./components/Sidebar";
-import Register from "./components/Register/Register";
+import MainPanel from "./components/MainPanel/MainPanel";
 
 function App() {
   return (
     <div className="App">
-      <Register />
-      {/* <PermanentDrawerLeft /> */}
+      <MainPanel />
     </div>
   );
 }

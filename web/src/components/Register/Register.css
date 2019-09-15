@@ -1,11 +1,52 @@
-.Register {
-  height: 100vh;
-  width: 100vw;
-  background: #069bab;
-  display: flex;
+.RegisterContainer {
+  width: 50vw;
+  height: 60vh;
+  background: white;
+  border-radius: 25px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 5px grey;
 }
 
-.Register .FormBackground {
+.RegisterBox {
+  
+}
+
+.RegisterContainer .RegisterBox .FormContainer .FormBackground {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.RegisterContainer .RegisterBox .FormContainer .FormBackground .Title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.RegisterContainer .RegisterBox .FormContainer .FormBackground .TextForms {
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+.RegisterContainer .RegisterBox .FormContainer .FormBackground .TextForms .TextField {
+	margin-top: 10px;
+	width: 300pt;
+}
+
+.RegisterContainer .RegisterBox .submit {
+	background-color: #ffd500;
+	border: 3px solid #ebc400;
+	padding: 10px;
+	font-size: 15pt;
+	border-radius: 20px;
+	width: 150px;
+	font-weight: bold;
+	margin-left: 40%;
+	margin-right: 60%;
+	box-shadow: 5px 5px 2px grey;
+}
+
+
+/* .Register .FormBackground {
   margin-top: 0;
   width: 80%;
   height: 100%;
@@ -33,4 +74,4 @@
   width: 10vw;
   margin-left: 10vw;
   right: 0;
-}
+} */

@@ -31,52 +31,33 @@ class Register extends React.Component {
   };
 
   render() {
-    const {
-      name,
-      age,
-      emergencyContact,
-      currentMedications,
-      allergies,
-      bloodType
-    } = this.state;
     return (
-      <div className="Register">
-        <div className="LeftPanel">
-          <div>NEW PATIENT</div>
-          <div>LOAD PATIENT</div>
-          <div>SETTING</div>
-        </div>
-
-        <div className="FormBackground">
+      <div className="RegisterContainer">
+        <div className="RegisterBox">
           <div className="FormContainer">
-            <div className="Title">Registration</div>
-            <div className="TextForms">
-              {Object.keys(this.state).map(key => {
-                return (
-                  <div className="TextField">
-                    <TextField
-                      OnChange={e => {
-                        this.textInputChange(e, key);
-                      }}
-                      placeholder={this.state[key]}
-                    />
-                  </div>
-                );
-              })}
+            <div className="FormBackground">
+              <div className="Title">Registration</div>
+              <div className="TextForms">
+                {Object.keys(this.state).map(key => {
+                  return (
+                    <div className="TextField">
+                      <TextField
+                        OnChange={e => {
+                          this.textInputChange(e, key);
+                        }}
+                        placeholder={this.state[key]}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+          <button className="submit">Submit</button>
         </div>
-        <button className="submit">Submit</button>
       </div>
     );
   }
 }
-
-const styles = {
-  button: {
-    margin: 15,
-    background: "red"
-  }
-};
 
 export default Register;
