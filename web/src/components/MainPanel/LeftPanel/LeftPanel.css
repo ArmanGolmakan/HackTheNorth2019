@@ -1,0 +1,22 @@
+.LeftPanelContainer {
+    
+}
+
+.LeftPanelContainer .LeftPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.LeftPanelContainer .LeftPanel div {
+    display: flex;
+    justify-content: center;
+    margin: 18px 18px 18px 18px;
+    color: white;
+    font-weight: 900px;
+    letter-spacing: 2px;
+}
+
+.LeftPanelContainer .LeftPanel div a:hover {
+    border-bottom: solid white 2px;
+    cursor: pointer;
+}
