@@ -30,27 +30,23 @@ class Register extends React.Component {
   render() {
     return (
       <div className="RegisterContainer">
-        <div className="RegisterBox">
-          <div className="FormContainer">
-            <div className="FormBackground">
-              <div className="Title">Registration</div>
-              <div className="TextForms">
-                {Object.keys(this.state).map(key => {
-                  return (
-                    <div className="TextField">
-                      <TextField
-                        OnChange={e => {
-                          this.textInputChange(e, key);
-                        }}
-                        placeholder={this.state[key]}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+        <div className="FormContainer">
+          <div className="Title">Registration</div>
+          <div className="TextForms">
+            {Object.keys(this.state).map(key => {
+              return (
+                <div className="TextField">
+                  <TextField
+                    OnChange={e => {
+                      this.textInputChange(e, key);
+                    }}
+                    placeholder={this.state[key]}
+                  />
+                </div>
+              );
+            })}
           </div>
-          <button className="submit">Submit</button>
+          {/* <button className="submit">Submit</button> */}
         </div>
       </div>
     );
