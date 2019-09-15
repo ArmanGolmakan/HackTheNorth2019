@@ -36,7 +36,7 @@ class Register extends React.Component {
             {Object.keys(this.state).map(key => {
               return (
                 <div className="TextField">
-                  <TextField
+                  <TextField style={{width: '300px', fontSize: '32px'}} 
                     OnChange={e => {
                       this.textInputChange(e, key);
                     }}
