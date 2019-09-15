@@ -32,10 +32,10 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div className="RegisterBox">
-        <div className="RegisterContainer">
-          <div className="FormBackground">
-            <div className="FormContainer">
+      <div className="RegisterContainer">
+        <div className="RegisterBox">
+          <div className="FormContainer">
+            <div className="FormBackground">
               <div className="Title">Registration</div>
               <div className="TextForms">
                 {Object.keys(this.state).map(key => {
