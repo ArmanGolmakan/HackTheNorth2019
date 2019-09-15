@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
   },
   scanNFC: {
     width: 200
+  },
+  logo: {
+    width: 100,
+    position: "absolute",
+    left: 0,
+    top: 0
   }
 });
 

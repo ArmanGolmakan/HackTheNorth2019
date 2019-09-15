@@ -24,6 +24,7 @@ class Register extends React.Component {
 
   onSubmitButtonClick = () => {
     upload(this.state);
+    alert("Begin NFC Detection");
   };
 
   render() {

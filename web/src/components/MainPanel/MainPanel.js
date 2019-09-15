@@ -14,13 +14,25 @@ class MainPanel extends React.Component {
       currentMedications: "Current Medications",
       allergies: "Allergies",
       bloodType: "Blood Type",
-      currentPanel: "Registration"
+      currentPanel: "Load"
     };
+  }
+
+  componentWillMount() {
+    window.addEventListener("valueUpdate", () => {
+      console.log("load");
+      this.setState({ currentPanel: "Load" });
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("valueUpdate");
   }
 
   render() {
     return (
       <div className="MainPanel">
+        <img className="logo" src={require("../../assets/logo.png")} />
         <LeftPanel
           onClick={panel => {
             this.setState({

@@ -8,3 +8,10 @@
   width: 100vw;
   height: 100vh;
 }
+
+.logo {
+  position: absolute;
+  height: 80px;
+  top: 30px;
+  left: 30px;
+}

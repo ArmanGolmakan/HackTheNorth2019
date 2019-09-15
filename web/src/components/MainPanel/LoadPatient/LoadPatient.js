@@ -19,6 +19,8 @@ class LoadPatient extends React.Component {
   componentWillMount() {
     const firebaseApp = firebase.database().ref("user/");
     firebaseApp.on("value", snapshot => {
+      let event = new Event("valueUpdate");
+      window.dispatchEvent(event);
       if (snapshot.val().inputObj) {
         let newState = snapshot.val().inputObj.input;
         this.setState({
