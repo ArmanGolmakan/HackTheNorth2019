@@ -1,22 +1,32 @@
+.LeftPanel {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.LeftPanel div {
+  text-align: right;
+}
 .LeftPanelContainer {
-    
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .LeftPanelContainer .LeftPanel {
-    display: flex;
-    flex-direction: column;
+  flex-direction: column;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 40vh;
 }
 
 .LeftPanelContainer .LeftPanel div {
-    display: flex;
-    justify-content: center;
-    margin: 18px 18px 18px 18px;
-    color: white;
-    font-weight: 900px;
-    letter-spacing: 2px;
+  text-align: right;
+  margin: 18px 18px 18px 18px;
+  color: white;
+  font-weight: 900px;
+  letter-spacing: 2px;
 }
 
 .LeftPanelContainer .LeftPanel div a:hover {
-    border-bottom: solid white 2px;
-    cursor: pointer;
+  border-bottom: solid white 3px;
+  cursor: pointer;
 }
