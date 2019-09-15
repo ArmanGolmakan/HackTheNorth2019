@@ -59,11 +59,12 @@ class ReadNFC extends Component {
 
   uploadToFirebase(input) {
     const firebase = this.props.navigation.getParam("firebaseApp", "");
+    const inputObj = JSON.parse(input);
     firebase
       .database()
       .ref("user/")
       .set({
-        input
+        inputObj
       });
   }
   render() {

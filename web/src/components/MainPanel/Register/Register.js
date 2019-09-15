@@ -23,8 +23,7 @@ class Register extends React.Component {
   };
 
   onSubmitButtonClick = () => {
-    // send inputText to firebase (James)
-    upload("hello");
+    upload(this.state);
   };
 
   render() {
@@ -36,8 +35,9 @@ class Register extends React.Component {
             {Object.keys(this.state).map(key => {
               return (
                 <div className="TextField">
-                  <TextField style={{width: '300px', fontSize: '32px'}} 
-                    OnChange={e => {
+                  <TextField
+                    style={{ width: "300px", fontSize: "32px" }}
+                    onChange={e => {
                       this.textInputChange(e, key);
                     }}
                     placeholder={this.state[key]}
@@ -46,9 +46,11 @@ class Register extends React.Component {
               );
             })}
           </div>
-          {/* <button className="submit">Submit</button> */}
         </div>
-        <img src={require("../../../assets/submit.png")} />
+        <img
+          src={require("../../../assets/submit.png")}
+          onClick={this.onSubmitButtonClick}
+        />
       </div>
     );
   }

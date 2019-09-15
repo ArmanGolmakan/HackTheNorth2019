@@ -5,7 +5,7 @@
   border-radius: 45px;
   display: flex;
   align-items: center;
-  margin-right: 3vw;
+  margin-right: 10vw;
   /* padding: 20px 20px 20px 20px; */
   box-shadow: 0 0 10px darkslategrey;
 }
@@ -43,7 +43,7 @@
 .RegisterContainer img {
   height: 50px;
   position: fixed;
-  right: 5vw;
+  right: 12vw;
   bottom: 19vh;
 }
 /* .Register .FormBackground {

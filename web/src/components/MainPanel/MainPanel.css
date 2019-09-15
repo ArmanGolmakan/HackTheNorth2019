@@ -1,10 +1,10 @@
 .MainPanel {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-around;
-    align-items: center;
-    background: #069bab;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  align-items: center;
+  background: #069bab;
+  width: 100vw;
+  height: 100vh;
 }
