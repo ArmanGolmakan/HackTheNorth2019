@@ -1,12 +1,29 @@
 import React, { Component } from "react";
-import { View, Text, Platform, ScrollView, Alert } from "react-native";
+import { View, Text, Platform, Image, Alert, StyleSheet } from "react-native";
 import NfcManager, { Ndef } from "react-native-nfc-manager";
 
 function buildTextPayload(valueToWrite) {
   return Ndef.encodeMessage([Ndef.textRecord(valueToWrite)]);
 }
 
+const styles = StyleSheet.create({
+  background: {
+    fontWeight: "bold",
+    fontSize: 30,
+    height: 100,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  scanNFC: {
+    width: 400
+  }
+});
+
 class WriteNFC extends Component {
+  static navigationOptions = {
+    header: null
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -41,23 +58,13 @@ class WriteNFC extends Component {
   render() {
     let { supported, enabled, tag, parsedText } = this.state;
     return (
-      <ScrollView style={{ flex: 1 }}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <Text>{`Is NFC supported ? ${supported}`}</Text>
-          <Text>{`Is NFC enabled (Android only)? ${enabled}`}</Text>
-
-          <Text style={{ marginTop: 20 }}>{`Current tag JSON: ${JSON.stringify(
-            tag
-          )}`}</Text>
-          {parsedText && (
-            <Text
-              style={{ marginTop: 10, marginBottom: 20, fontSize: 18 }}
-            >{`Parsed Text: ${parsedText}`}</Text>
-          )}
-        </View>
-      </ScrollView>
+      <View style={styles.background}>
+        <Image
+          style={styles.scanNFC}
+          source={require("../assets/scan.gif")}
+          resizeMode={"center"}
+        />
+      </View>
     );
   }
 
@@ -84,7 +91,10 @@ class WriteNFC extends Component {
     this.setState({ isWriting: true });
     NfcManager.requestNdefWrite(bytes)
       .then(() => {
-        Alert.alert("Success");
+        Alert.alert(
+          "Success",
+          "Patient information successfully updated on NFC"
+        );
         this.props.navigation.navigate("HomeScreen");
       })
       .catch(err => console.warn(err))

@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import upload from "../../../functions/upload";
 import "./Register.css";
 
-const handlePress = () => false
+const handlePress = () => false;
 
 class Register extends React.Component {
   constructor(props) {
@@ -31,10 +31,10 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div className="RegisterBox">
-        <div className="RegisterContainer">
-          <div className="FormBackground">
-            <div className="FormContainer">
+      <div className="RegisterContainer">
+        <div className="RegisterBox">
+          <div className="FormContainer">
+            <div className="FormBackground">
               <div className="Title">Registration</div>
               <div className="TextForms">
                 {Object.keys(this.state).map(key => {
@@ -54,7 +54,6 @@ class Register extends React.Component {
           </div>
           <button className="submit">Submit</button>
         </div>
-        
       </div>
     );
   }

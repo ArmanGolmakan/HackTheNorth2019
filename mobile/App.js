@@ -13,13 +13,20 @@ const MainNavigator = createStackNavigator(
     WriteNFC,
     ReadNFC
   },
-  { initialRouteName: "HomeScreen" }
+  { initialRouteName: "HomeScreen" },
+  {
+    headerMode: "none",
+    navigationOptions: {
+      headerVisible: false
+    }
+  }
 );
 
 const AppContainer = createAppContainer(MainNavigator);
 
 export default class App extends Component {
   render() {
+    console.disableYellowBox = true;
     return <AppContainer />;
   }
 }

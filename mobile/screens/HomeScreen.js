@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Button, Alert } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Alert,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
 import * as firebase from "firebase";
 
 const firebaseConfig = {
@@ -17,7 +24,25 @@ if (!firebase.apps.length) {
 const userRef = firebaseApp.database().ref("user/");
 let isInitial = true;
 
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: "#069BAB",
+    fontWeight: "bold",
+    fontSize: 30,
+    height: 100,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  scanNFC: {
+    width: 200
+  }
+});
+
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
   componentDidMount() {
     // hacky way to prevent initial loading from firebase
     userRef.on("value", snapshot => {
@@ -32,14 +57,18 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
-        <Text>Home Screen</Text>
-        <Button
+      <View style={styles.background}>
+        <TouchableOpacity
           onPress={() => {
             navigate("ReadNFC", { firebaseApp });
           }}
-          title="Scan NFC"
-        />
+        >
+          <Image
+            style={styles.scanNFC}
+            resizeMode={"contain"}
+            source={require("../assets/ScanNFC.png")}
+          />
+        </TouchableOpacity>
       </View>
     );
   }

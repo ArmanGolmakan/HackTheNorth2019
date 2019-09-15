@@ -1,8 +1,33 @@
 import React, { Component } from "react";
-import { View, Text, Platform, ScrollView, Alert } from "react-native";
+import {
+  View,
+  Text,
+  Platform,
+  ScrollView,
+  Image,
+  Alert,
+  StyleSheet
+} from "react-native";
 import NfcManager, { Ndef } from "react-native-nfc-manager";
 
+const styles = StyleSheet.create({
+  background: {
+    fontWeight: "bold",
+    fontSize: 30,
+    height: 100,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  scanNFC: {
+    width: 400
+  }
+});
+
 class ReadNFC extends Component {
+  static navigationOptions = {
+    header: null
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -42,19 +67,14 @@ class ReadNFC extends Component {
       });
   }
   render() {
-    let { supported, enabled, tag, parsedText } = this.state;
     return (
-      <ScrollView style={{ flex: 1 }}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          {parsedText && (
-            <Text
-              style={{ marginTop: 10, marginBottom: 20, fontSize: 18 }}
-            >{`Parsed Text: ${parsedText}`}</Text>
-          )}
-        </View>
-      </ScrollView>
+      <View style={styles.background}>
+        <Image
+          style={styles.scanNFC}
+          source={require("../assets/scan.gif")}
+          resizeMode={"center"}
+        />
+      </View>
     );
   }
 
@@ -100,6 +120,8 @@ class ReadNFC extends Component {
     this.setState({ parsedText: text });
     // hacky way to remove metadata
     this.uploadToFirebase(text.slice(3, text.length));
+    Alert.alert("Success", "Patient information successfully scanned.");
+    this.props.navigation.navigate("HomeScreen");
     // upload to firebase
   };
 
